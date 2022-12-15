@@ -9,7 +9,7 @@ import {
   useTransition,
 } from "@remix-run/react";
 import invariant from "tiny-invariant";
-// import { ErrorFallback } from "~/components";
+import { ErrorFallback } from "~/components";
 
 import {
   createPost,
@@ -34,7 +34,7 @@ export async function loader({ request, params }: LoaderArgs) {
 }
 
 export async function action({ request, params }: ActionArgs) {
-  await requireAdminUser(request);
+  // await requireAdminUser(request);
   const formData = await request.formData();
   const intent = formData.get("intent");
   invariant(typeof params.slug === "string", "slug not provided");

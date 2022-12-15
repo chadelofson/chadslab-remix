@@ -33,9 +33,6 @@ export async function action({ request }: ActionArgs) {
 }
 
 export default function NewNotePage() {
-  throw new Response("Not Found", {
-    status: 404,
-  });
   const actionData = useActionData<typeof action>();
   const titleRef = React.useRef<HTMLInputElement>(null);
   const bodyRef = React.useRef<HTMLTextAreaElement>(null);

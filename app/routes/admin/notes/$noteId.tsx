@@ -7,9 +7,6 @@ import { deleteNote, getNote } from "~/models/note.server";
 import { requireUserId } from "~/session.server";
 
 export async function loader({ request, params }: LoaderArgs) {
-  throw new Response("Not Found", {
-    status: 404,
-  });
   const userId = await requireUserId(request);
   invariant(params.noteId, "noteId not found");
 

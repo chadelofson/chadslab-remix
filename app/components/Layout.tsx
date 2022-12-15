@@ -1,7 +1,9 @@
+import React from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
-export default function Layout(props) {
+// eslint-disable-next-line no-use-before-define
+export default function Layout(props: { children: React.ReactNode }) {
   const { children } = props;
 
   return (
