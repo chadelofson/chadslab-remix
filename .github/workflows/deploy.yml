@@ -209,6 +209,7 @@ jobs:
         with:
           args: "deploy --app ${{ steps.app_name.outputs.value }}-staging --image registry.fly.io/${{ steps.app_name.outputs.value }}:${{ github.ref_name }}-${{ github.sha }}"
         env:
+          FLY_REGION: "yyz"
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
       - name: 🚀 Deploy Production
@@ -217,4 +218,5 @@ jobs:
         with:
           args: "deploy --image registry.fly.io/${{ steps.app_name.outputs.value }}:${{ github.ref_name }}-${{ github.sha }}"
         env:
+          FLY_REGION: "yyz"
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
